@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
             GameObject prefab = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
 
             //Randomize Bomb spawn
-            if(Random.value < bombChance)
+            if (Random.value < bombChance)
             {
                 prefab = bombPrefab;
             }
