@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     [Tooltip("Bomb chance spawn")]
     public float bombChance = 0.05f;
 
-     //Fruit time spawning
+    //Fruit time spawning
     [Tooltip("Fruit spawn min time in seconds")]
     public float minSpawnDelay = 0.25f;
     [Tooltip("Fruit spawn max time in seconds")]
@@ -79,7 +79,7 @@ public class Spawner : MonoBehaviour
             Destroy(fruit, maxLifetime);//Fruit living time
 
             //Force for throwing fruits
-            float force = Random.Range(minForce, maxForce); 
+            float force = Random.Range(minForce, maxForce);
             fruit.GetComponent<Rigidbody>().AddForce(fruit.transform.up * force, ForceMode.Impulse);
 
             // How long take to spawn a new fruit

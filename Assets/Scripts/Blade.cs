@@ -41,11 +41,14 @@ public class Blade : MonoBehaviour
     private void Update()
     {
         // Handle input for starting, stopping, or continuing slicing
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0)) 
+        {
             StartSlicing();
-        } else if (Input.GetMouseButtonUp(0)) {
+        } else if (Input.GetMouseButtonUp(0)) 
+        {
             StopSlicing();
-        } else if (slicing) {
+        } else if (slicing) 
+        {
             ContinueSlicing();
         }
     }
