@@ -10,13 +10,19 @@ public class Blade : MonoBehaviour
     private bool slicing;// Indicates whether the blade is currently slicing
 
     //private TrailRenderer bladeTrail;
-
-    public float sliceForce = 5f;
+    [Tooltip("Defines the force applied to fruits when they are sliced.")]
+    [SerializeField]
+    private float sliceForce = 5f;
+    public float SliceForce // sliceForce is private
+    {
+        get { return sliceForce; }
+    }
     public Vector3 direction { get; private set; }// The direction of the blade's movement
 
     // The minimum velocity required to enable the blade's collider
     [Tooltip("The minimum velocity required to enable the blade's collider")]
-    public float minSpliceVelocity = 0.01f;
+    [SerializeField]
+    private float minSpliceVelocity = 0.01f;
 
     private void Awake()
     {
@@ -85,9 +91,11 @@ public class Blade : MonoBehaviour
         // Calculate the direction of movement
         direction = newPosition - transform.position;
 
-        // Calculate the velocity of the blade's movement
-        //The magnitude (length) of the direction vector, which represents
-        //the distance the blade moved between frames.
+        /* 
+        Calculate the velocity of the blade's movement
+        The magnitude (length) of the direction vector, which represents
+        the distance the blade moved between frames.
+        */
         float velocity = direction.magnitude / Time.deltaTime;
 
         // Enable the blade's collider only if the velocity exceeds the minimum required for slicing

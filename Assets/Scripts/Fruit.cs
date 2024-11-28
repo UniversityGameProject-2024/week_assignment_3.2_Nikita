@@ -3,8 +3,12 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     // References to the whole and sliced fruit GameObjects
-    public GameObject whole;
-    public GameObject sliced;
+    [SerializeField]
+    [Tooltip("Whole fruit image")]
+    private GameObject whole;
+    [SerializeField]
+    [Tooltip("Sliced fruit image")]
+    private GameObject sliced;
 
     // References to the Rigidbody and Collider components of the fruit
     private Rigidbody fruitRigidbody;
@@ -53,7 +57,7 @@ public class Fruit : MonoBehaviour
             // Retrieve the Blade component from the colliding object
             Blade blade = other.GetComponent<Blade>();
             // Call the Slice method, passing the blade's direction, position, and slice force
-            Slice(blade.direction, blade.transform.position, blade.sliceForce);
+            Slice(blade.direction, blade.transform.position, blade.SliceForce);
         }
     }
 }

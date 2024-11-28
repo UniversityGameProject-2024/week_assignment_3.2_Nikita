@@ -7,34 +7,44 @@ public class Spawner : MonoBehaviour
     private Collider spawnArea;
 
     [Tooltip("Which fruits will appear")]
-    public GameObject[] fruitPrefabs;// fruits array
-
-    public GameObject bombPrefab;
+    [SerializeField]
+    private GameObject[] fruitPrefabs;// fruits array
+    [SerializeField]
+    [Tooltip("Bomb prefab")]
+    private GameObject bombPrefab;
     [Range(0f, 1f)]
     [Tooltip("Bomb chance spawn")]
-    public float bombChance = 0.05f;
+    [SerializeField]
+    private float bombChance = 0.05f;
 
     //Fruit time spawning
     [Tooltip("Fruit spawn min time in seconds")]
-    public float minSpawnDelay = 0.25f;
+    [SerializeField]
+    private float minSpawnDelay = 0.25f;
     [Tooltip("Fruit spawn max time in seconds")]
-    public float maxSpawnDelay = 1.0f;
+    [SerializeField]
+    private float maxSpawnDelay = 1.0f;
 
     //Angle spawning
     [Tooltip("Fruit min angle spawning")]
-    public float minAngle = -15f;
+    [SerializeField]
+    private float minAngle = -15f;
     [Tooltip("Fruit max angle spawning")]
-    public float maxAngle = 15f;
+    [SerializeField]
+    private float maxAngle = 15f;
 
     //Force for throwing fruits
     [Tooltip("Min force applied to throw fruits")]
-    public float minForce = 18f;
+    [SerializeField]
+    private float minForce = 18f;
     [Tooltip("Max force applied to throw fruits")]
-    public float maxForce = 22f;
+    [SerializeField]
+    private float maxForce = 22f;
 
     //Fruit living time
     [Tooltip("Fruit living time in seconds")]
-    public float maxLifetime = 5f;
+    [SerializeField]
+    private float maxLifetime = 5f;
 
     private void Awake()
     {

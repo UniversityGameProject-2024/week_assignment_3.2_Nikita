@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component for displaying the score
+    [SerializeField]
+    private TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component for displaying the score
     private int score; // The player's current score
 
     private Blade blade; // Reference to the Blade component in the scene
