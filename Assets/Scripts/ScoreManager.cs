@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
 
     private Blade blade; // Reference to the Blade component in the scene
     private Spawner spawner; // Reference to the Spawner component in the scene
+    [SerializeField]
+    private TextMeshProUGUI gameOverText;
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0; // Reset the score to 0
         UpdateScoreText(); // Update the UI to show the initial score
+        gameOverText.gameObject.SetActive(false); // Hide the Game Over text
     }
     public void IncreasingScore()
     {
@@ -45,5 +48,7 @@ public class ScoreManager : MonoBehaviour
         // Disable the blade and spawner, effectively stopping the game
         blade.enabled = false;
         spawner.enabled = false;
+        // Make the TextMeshProUGUI object visible
+        gameOverText.gameObject.SetActive(true);
     }
 }
